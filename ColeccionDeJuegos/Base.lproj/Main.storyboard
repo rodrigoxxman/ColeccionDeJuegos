@@ -19,17 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="51g-SQ-0KM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="01W-hw-SID">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="51g-SQ-0KM" secondAttribute="bottom" id="GTp-kl-hbT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="51g-SQ-0KM" secondAttribute="trailing" id="Geb-q9-LJI"/>
-                            <constraint firstItem="51g-SQ-0KM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dK4-Im-ltn"/>
-                            <constraint firstItem="51g-SQ-0KM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xIf-lh-3W1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="01W-hw-SID" secondAttribute="trailing" id="2tt-Ty-Tjf"/>
+                            <constraint firstItem="01W-hw-SID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3WA-zf-T5s"/>
+                            <constraint firstItem="01W-hw-SID" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bhf-Dc-GhQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="01W-hw-SID" secondAttribute="bottom" id="u3O-Pe-PiR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -41,7 +41,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="51g-SQ-0KM" id="BjB-We-Ivv"/>
+                        <outlet property="tableView" destination="01W-hw-SID" id="R2e-OP-bME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,8 +72,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAn-Zz-Zci">
                                 <rect key="frame" x="159.5" y="304" width="55" height="30"/>
                                 <state key="normal" title="Agregar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbk-97-cAe">
+                                <rect key="frame" x="160" y="349" width="55" height="30"/>
+                                <state key="normal" title="Eliminar"/>
                                 <connections>
-                                    <action selector="agregarTapped:" destination="5H6-0c-4YU" eventType="touchUpInside" id="gbi-fb-Xia"/>
+                                    <action selector="eliminarTapped:" destination="5H6-0c-4YU" eventType="touchUpInside" id="cKm-mx-qFh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,8 +86,10 @@
                             <constraint firstItem="JvK-cI-Gi9" firstAttribute="top" secondItem="9Ov-hY-uug" secondAttribute="bottom" constant="20" id="7Dz-BX-aIa"/>
                             <constraint firstItem="JvK-cI-Gi9" firstAttribute="width" secondItem="9Ov-hY-uug" secondAttribute="width" id="820-0x-bEF"/>
                             <constraint firstItem="JvK-cI-Gi9" firstAttribute="centerX" secondItem="9Ov-hY-uug" secondAttribute="centerX" id="8QY-J4-dwc"/>
+                            <constraint firstItem="nbk-97-cAe" firstAttribute="centerX" secondItem="VLb-VY-db5" secondAttribute="centerX" id="DDQ-hO-AUc"/>
                             <constraint firstItem="JvK-cI-Gi9" firstAttribute="top" secondItem="9Ov-hY-uug" secondAttribute="bottom" constant="20" id="cnf-82-X29"/>
                             <constraint firstItem="9Ov-hY-uug" firstAttribute="centerX" secondItem="PMC-XO-hSz" secondAttribute="centerX" id="jW3-PO-jO2"/>
+                            <constraint firstItem="nbk-97-cAe" firstAttribute="top" secondItem="tAn-Zz-Zci" secondAttribute="bottom" constant="15" id="ogY-R2-E0h"/>
                             <constraint firstItem="tAn-Zz-Zci" firstAttribute="top" secondItem="JvK-cI-Gi9" secondAttribute="bottom" constant="20" id="s4M-LQ-Ud9"/>
                             <constraint firstItem="9Ov-hY-uug" firstAttribute="top" secondItem="VLb-VY-db5" secondAttribute="top" constant="20" id="xC6-pz-N94"/>
                             <constraint firstItem="tAn-Zz-Zci" firstAttribute="centerX" secondItem="VLb-VY-db5" secondAttribute="centerX" id="zKu-sI-Vnd"/>
@@ -106,6 +112,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="9Ov-hY-uug" id="h6R-4U-H2s"/>
+                        <outlet property="agregarActualizarBoton" destination="tAn-Zz-Zci" id="iAR-9g-DUk"/>
                         <outlet property="tituloTextField" destination="JvK-cI-Gi9" id="dSa-5b-RAL"/>
                     </connections>
                 </viewController>
